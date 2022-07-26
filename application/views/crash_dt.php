@@ -1,8 +1,3 @@
-<?php
-include 'head.php';
-$id = $_GET['id'];
-?>
-
 <div class="row ">
   <div class="col-md-12 mt-4">
     <div class="card">
@@ -12,30 +7,25 @@ $id = $_GET['id'];
       <div class="card-body pt-4 p-3">
         <ul class="list-group">
           <?php
-          $sql = mysqli_query($connEm, "SELECT a.*, b.nama,b.desa,b.kec,b.kab FROM pelanggaran a JOIN tb_santri b ON a.nis=b.nis WHERE a.nis = '$nis_santri' AND a.id = '$id' ");
-          while ($dd = mysqli_fetch_assoc($sql)) { ?>
+          foreach ($detail as $dd) : ?>
             <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
               <div class="d-flex flex-column">
-                <h6 class="mb-3 text-sm"><?= $dd['nama']; ?></h6>
-                <h6 class="mb-3 text-sm"><?= $dd['desa'] . ' - ' . $dd['kec'] . ' - ' . $dd['kab']; ?></h6>
+                <h6 class="mb-3 text-sm"><?= $dd->nama; ?></h6>
+                <h6 class="mb-3 text-sm"><?= $dd->desa . ' - ' . $dd->kec . ' - ' . $dd->kab; ?></h6>
                 <hr>
-                <h6 class="mb-3 text-sm"><?= $dd['kasus']; ?></h6>
-                <span class="mb-2 text-xs">Tanggal Kejadian : <span class="text-dark font-weight-bold ms-sm-2"><?= $dd['tanggal']; ?></span></span>
-                <span class="mb-2 text-xs">Tempat Kejadian : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd['tempat']; ?></span></span>
-                <span class="mb-2 text-xs">Kronologis : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd['kronologis']; ?></span></span>
-                <span class="mb-2 text-xs">Sanksi : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd['sanksi']; ?></span></span>
-                <span class="mb-2 text-xs">Yang Menangani : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd['pj']; ?></span></span>
-                <span class="mb-2 text-xs">Ket : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd['stts']; ?></span></span>
+                <h6 class="mb-3 text-sm"><?= $dd->kasus; ?></h6>
+                <span class="mb-2 text-xs">Tanggal Kejadian : <span class="text-dark font-weight-bold ms-sm-2"><?= $dd->tanggal; ?></span></span>
+                <span class="mb-2 text-xs">Tempat Kejadian : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd->tempat; ?></span></span>
+                <span class="mb-2 text-xs">Kronologis : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd->kronologis; ?></span></span>
+                <span class="mb-2 text-xs">Sanksi : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd->sanksi; ?></span></span>
+                <span class="mb-2 text-xs">Yang Menangani : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd->pj; ?></span></span>
+                <span class="mb-2 text-xs">Ket : <span class="text-dark ms-sm-2 font-weight-bold"><?= $dd->stts; ?></span></span>
               </div>
             </li>
-          <?php } ?>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>
   </div>
 
 </div>
-
-<?php
-include 'foot.php';
-?>
