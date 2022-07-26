@@ -1,7 +1,3 @@
-<?php
-include 'head.php';
-?>
-
 <div class="row">
   <div class="col-lg-12">
     <div class="row">
@@ -30,7 +26,3 @@ include 'head.php';
   </div>
 
 </div>
-
-<?php
-include 'foot.php';
-?>
