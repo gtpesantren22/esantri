@@ -38,12 +38,12 @@
             <div class="row">
               <div class="col-md-6 mb-md-0 mb-4">
                 <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                  <h6 class="mb-0">Masuk : </h6>
+                  <h6 class="mb-0">Bayar : <?= "Rp. " . number_format($bayar->nominal, 0, ',', '.'); ?></h6>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                  <h6 class="mb-0">Sisa : </h6>
+                  <h6 class="mb-0">Sisa : <?= "Rp. " . number_format((($tangg->ju_ap * 10) + ($tangg->me_ju * 2)) - $bayar->nominal, 0, ',', '.'); ?></h6>
                 </div>
               </div>
             </div>
@@ -63,25 +63,17 @@
       </div>
       <div class="card-body p-3 pb-0">
         <ul class="list-group">
-          <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-            <div class="d-flex flex-column">
-              <h6 class="mb-1 text-dark font-weight-bold text-sm">20 Juli 2022</h6>
-              <span class="text-xs">#No Transaksi</span>
-            </div>
-            <div class="d-flex align-items-center text-sm">
-              Rp. 1.200.000
-            </div>
-          </li>
-
-          <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-            <div class="d-flex flex-column">
-              <h6 class="mb-1 text-dark font-weight-bold text-sm">20 Juli 2022</h6>
-              <span class="text-xs">#No Transaksi</span>
-            </div>
-            <div class="d-flex align-items-center text-sm">
-              Rp. 1.200.000
-            </div>
-          </li>
+          <?php foreach ($rinci_bayar as $dt) : ?>
+            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+              <div class="d-flex flex-column">
+                <h6 class="mb-1 text-dark font-weight-bold text-sm"><?= date('d-M-Y', strtotime($dt->tgl)); ?></h6>
+                <span class="text-xs">#No Transaksi : <?= $dt->id; ?></span>
+              </div>
+              <div class="d-flex align-items-center text-sm">
+                <?= "Rp. " . number_format($dt->nominal, 0, ',', '.');; ?>
+              </div>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>

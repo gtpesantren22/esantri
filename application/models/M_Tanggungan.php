@@ -20,4 +20,21 @@ class M_Tanggungan extends CI_Model
         $this->db2->from('tangg');
         return $this->db2->get();
     }
+
+    public function bayar($where)
+    {
+        $this->db2->select_sum('nominal');
+        $this->db2->where('nis', $where);
+        $this->db2->where('tahun', '2022/2023');
+        $this->db2->from('pembayaran');
+        return $this->db2->get();
+    }
+
+    public function rinci_bayar($where)
+    {
+        $this->db2->where('nis', $where);
+        $this->db2->where('tahun', '2022/2023');
+        $this->db2->from('pembayaran');
+        return $this->db2->get();
+    }
 }

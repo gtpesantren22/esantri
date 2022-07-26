@@ -20,6 +20,8 @@ class Tanggungan extends CI_Controller
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Tanggungan->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
 		$data['tangg'] = $this->M_Tanggungan->dt_tangg($nis_santri)->row();
+		$data['bayar'] = $this->M_Tanggungan->bayar($nis_santri)->row();
+		$data['rinci_bayar'] = $this->M_Tanggungan->rinci_bayar($nis_santri)->result();
 
 		$this->load->view('head', $data);
 		$this->load->view('tanggungan', $data);

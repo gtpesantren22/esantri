@@ -103,10 +103,9 @@ if (isset($this->session->userdata['logged_in'])) {
       <div class="row">
         <div class="col-8 mx-auto text-center mt-1">
           <p class="mb-0 text-secondary">
-            by Admin PPDWK
-            @ <script>
+            Copyright © <script>
               document.write(new Date().getFullYear())
-            </script>
+            </script> by Admin PPDWK.
           </p>
         </div>
       </div>
