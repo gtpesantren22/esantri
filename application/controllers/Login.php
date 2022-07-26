@@ -24,6 +24,10 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_Login');
+
+        if ($this->session->userdata('namaSesi') === 'qwertyuiop0987654321') {
+            redirect('home');
+        }
     }
 
     public function index()
