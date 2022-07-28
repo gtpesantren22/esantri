@@ -16,7 +16,7 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] = "Halaman Utama";
+		$data['title'] = 'home';
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Home->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
 		$data['tangg'] = $this->M_Home->dt_tangg($nis_santri)->row();

@@ -16,7 +16,7 @@ class Absen extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] = "Halaman Utama";
+		$data['title'] = 'absen';
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Absen->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
 		$data['abs'] = $this->M_Absen->dt_abs($nis_santri)->result();
@@ -28,7 +28,7 @@ class Absen extends CI_Controller
 
 	public function cek()
 	{
-		$data['title'] = "Halaman Utama";
+		$data['title'] = 'absen';
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Absen->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
 		$data['abs'] = $this->M_Absen->dt_abs($nis_santri)->result();

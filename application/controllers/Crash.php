@@ -16,7 +16,7 @@ class Crash extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] = "Halaman Utama";
+		$data['title'] = 'crash';
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Crash->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
 		$data['crs'] = $this->M_Crash->dt_crs($nis_santri)->result();
@@ -28,7 +28,7 @@ class Crash extends CI_Controller
 
 	public function detail($id = null)
 	{
-
+		$data['title'] = 'crash';
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Crash->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
 		$data['detail'] = $this->M_Crash->detail_data($id);

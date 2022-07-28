@@ -16,7 +16,7 @@ class Saku extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] = "Halaman Utama";
+		$data['title'] = 'saku';
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Saku->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
 
