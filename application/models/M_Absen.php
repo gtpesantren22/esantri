@@ -21,4 +21,12 @@ class M_Absen extends CI_Model
         $this->db2->from('absen');
         return $this->db2->get();
     }
+
+    public function dt_abs_cek($nis, $tgl)
+    {
+        $this->db2->where('nis', $nis);
+        $this->db2->where('tanggal', $tgl);
+        $this->db2->from('absen');
+        return $this->db2->get();
+    }
 }

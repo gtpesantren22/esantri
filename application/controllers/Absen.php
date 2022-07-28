@@ -25,4 +25,20 @@ class Absen extends CI_Controller
 		$this->load->view('absen', $data);
 		$this->load->view('foot');
 	}
+
+	public function cek()
+	{
+		$data['title'] = "Halaman Utama";
+		$nis_santri = $this->session->userdata('nis_santri');
+		$data['dtsn'] = $this->M_Absen->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
+		$data['abs'] = $this->M_Absen->dt_abs($nis_santri)->result();
+
+		$tanggal = $this->input->post('tanggal', true);
+		$data['cek_abs'] = $this->M_Absen->dt_abs_cek($nis_santri, $tanggal);
+		$data['tgl'] = $tanggal;
+
+		$this->load->view('head', $data);
+		$this->load->view('absen_cek', $data);
+		$this->load->view('foot');
+	}
 }
