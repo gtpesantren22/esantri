@@ -1,15 +1,3 @@
-<?php
-if (isset($this->session->userdata['logged_in'])) {
-
-  echo "
-  <script>
-    window.location = '" . base_url('welcome') . "';
-  </script>
-  ";
-}
-
-?>
-
 <!--
 =========================================================
 * Soft UI Dashboard - v1.0.5
