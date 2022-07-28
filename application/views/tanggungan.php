@@ -46,6 +46,33 @@
                   <h6 class="mb-0">Sisa : <?= "Rp. " . number_format((($tangg->ju_ap * 10) + ($tangg->me_ju * 2)) - $bayar->nominal, 0, ',', '.'); ?></h6>
                 </div>
               </div>
+              <div class="col-md-12">
+                <?php
+                $tanggung = ($tangg->ju_ap * 10) + ($tangg->me_ju * 2);
+                $byar = $bayar->nominal;
+                $prsn = ($byar / $tanggung) * 100;
+                $porsentase = round($prsn, 1);
+
+                if ($porsentase <= 20) {
+                  $bg = 'bg-gradient-danger';
+                } elseif ($porsentase > 20 && $porsentase <= 40) {
+                  $bg = 'bg-gradient-primary';
+                } elseif ($porsentase > 40 && $porsentase <= 60) {
+                  $bg = 'bg-gradient-warning';
+                } elseif ($porsentase > 60 && $porsentase <= 80) {
+                  $bg = 'bg-gradient-info';
+                } elseif ($porsentase > 80 && $porsentase <= 100) {
+                  $bg = 'bg-gradient-success';
+                }
+
+                ?>
+                <br>
+                <span class="me-2 text-xs font-weight-bold text-center"><?= $porsentase; ?>% lunas</span>
+                <div class="progress">
+                  <div class="progress-bar <?= $bg; ?>" role="progressbar" aria-valuenow="<?= $porsentase; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $porsentase; ?>%;"></div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
