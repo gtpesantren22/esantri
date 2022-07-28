@@ -64,11 +64,11 @@ if (isset($this->session->userdata['logged_in'])) {
 
                   <label>Username</label>
                   <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="NIS Santri" name="username" aria-label="Email">
+                    <input type="text" class="form-control" placeholder="NIS Santri" name="username" required aria-label="Email">
                   </div>
                   <label>Password</label>
                   <div class="mb-3">
-                    <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required aria-label="Password" aria-describedby="password-addon">
                   </div>
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
