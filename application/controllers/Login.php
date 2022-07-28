@@ -57,6 +57,7 @@ class Login extends CI_Controller
                 $this->session->set_userdata('nis_santri', $hasil->nis);
                 $this->session->set_userdata('namaSesi', 'qwertyuiop0987654321');
 
+                $this->session->set_flashdata('success', 'Login Berhasil');
                 redirect('home');
             } else {
                 // $this->session->set_flashdata(
@@ -65,6 +66,7 @@ class Login extends CI_Controller
                 // 	alert('Password anda salah!');
                 // 	</script>"
                 // );
+                $this->session->set_flashdata('error', 'Login Salah');
                 redirect('login');
             }
         } else {

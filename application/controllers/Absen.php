@@ -19,7 +19,7 @@ class Absen extends CI_Controller
 		$data['title'] = "Halaman Utama";
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Absen->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
-		$data['abs'] = $this->M_Absen->dt_abs($nis_santri)->row();
+		$data['abs'] = $this->M_Absen->dt_abs($nis_santri)->result();
 
 		$this->load->view('head', $data);
 		$this->load->view('absen', $data);

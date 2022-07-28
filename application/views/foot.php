@@ -22,11 +22,30 @@
 <script src="<?= base_url(); ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
 <script src="<?= base_url(); ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
 <script src="<?= base_url(); ?>assets/js/plugins/chartjs.min.js"></script>
-
-
-
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="<?= base_url(); ?>assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
+
+<script src="<?= base_url(); ?>assets/sw/sweetalert2.all.min.js"></script>
+
+<script>
+    <?php if ($this->session->flashdata('success')) { ?>
+        var isi = <?= json_encode($this->session->flashdata('success')) ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: isi
+        })
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error')) { ?>
+        var isi = <?= json_encode($this->session->flashdata('error')) ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Berhasil',
+            text: isi
+        })
+    <?php } ?>
+</script>
 </body>
 
 </html>
