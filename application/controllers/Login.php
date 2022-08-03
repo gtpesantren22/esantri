@@ -60,24 +60,19 @@ class Login extends CI_Controller
                 $this->session->set_flashdata('success', 'Login Berhasil');
                 redirect('home');
             } else {
-                // $this->session->set_flashdata(
-                //     "pesan",
-                //     "<script>
-                // 	alert('Password anda salah!');
-                // 	</script>"
-                // );
-                $this->session->set_flashdata('error', 'Login Salah');
+                $this->session->set_flashdata(
+                    "pesan",
+                    "Password salah"
+                );
+                // $this->session->set_flashdata('error', 'Login Salah');
                 redirect('login');
             }
         } else {
-
             $this->session->set_flashdata(
                 "pesan",
-                "<script>
-                	alert('Password anda salah!');
-            		</script>"
+                "Username salah"
             );
-            base_url('welcome');
+            redirect('login');
         }
     }
 }

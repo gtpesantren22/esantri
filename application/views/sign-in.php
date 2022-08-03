@@ -48,6 +48,10 @@
                   <p class="mb-0">Silahkan masukan username dan password anda!</p>
                 </div>
                 <div class="card-body">
+                  <?php if ($this->session->flashdata('pesan')) { ?>
+                    <span class="badge badge-sm bg-gradient-danger badge-block" style="width: 100%;"><?= $this->session->flashdata('pesan'); ?></span>
+                  <?php } ?>
+
                   <?php echo form_open('login/user_login_process'); ?>
 
                   <label>Username</label>
