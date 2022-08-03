@@ -45,38 +45,37 @@
               <div class="card card-plain mt-0">
                 <div class="card-header pb-0 text-left bg-transparent">
                   <h3 class="font-weight-bolder text-info text-gradient">e-Santri PPDWK</h3>
-                  <p class="mb-0">Silahkan masukan username dan password anda!</p>
+                  <p class="mb-0">Halaman Register!</p>
                 </div>
                 <div class="card-body">
                   <?php if ($this->session->flashdata('pesan')) { ?>
                     <span class="badge badge-sm bg-gradient-danger badge-block" style="width: 100%;"><i class="fa fa-times"></i> <?= $this->session->flashdata('pesan'); ?></span>
                   <?php } elseif ($this->session->flashdata('berhasil')) { ?>
-                    <span class="badge badge-sm bg-gradient-success badge-block" style="width: 100%;"><i class="fa fa-check"></i> <?= $this->session->flashdata('berhasil'); ?></span>
+                    <span class="badge badge-sm bg-gradient-success badge-block"><i class="fa fa-check"></i> <?= $this->session->flashdata('berhasil'); ?></span>
                   <?php } ?>
-                  <?php echo form_open('login/user_login_process'); ?>
+                  <?php echo form_open('register/proses'); ?>
 
-                  <label>Username</label>
-                  <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="NIS Santri" name="username" required aria-label="Email">
+                  <label>No. NIK Santri</label>
+                  <div class="mb-0">
+                    <input type="text" class="form-control" placeholder="NIK Santri" name="nik" required maxlength="16">
                   </div>
-                  <label>Password</label>
-                  <div class="mb-3">
-                    <input type="password" class="form-control" name="password" placeholder="Password" required aria-label="Password" aria-describedby="password-addon">
-                  </div>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
-                    <label class="form-check-label" for="rememberMe">Remember me</label>
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" nae="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+
+                  <div class="mb-3 text-center">
+                    <button type="submit" nae="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Daftarkan</button>
                   </div>
                   <?php echo form_close(); ?>
-
+                  <h6>Catatan :</h6>
+                  <ul>
+                    <li><small>Silahkan Masukan NIK Santri berdasarkan Kartu Keluarga (KK)</small></li>
+                    <li><small>Jika No NIK sudah benar klik <b>Daftarkan</b>. Informasi akun akan dikirmkan melalui No WA yang terdaftar di data santri</small></li>
+                    <li><small>Jika belum mendapatkan pesan WA, silahkan menghubungi pengurus terkait</small></li>
+                  </ul>
                 </div>
+
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
-                    Belum punya akun?
-                    <a href="<?= base_url('register'); ?>" class="text-info text-gradient font-weight-bold">Daftar disini !</a>
+                    Sudah punya akun?
+                    <a href="<?= base_url('login'); ?>" class="text-info text-gradient font-weight-bold">Login disini !</a>
                   </p>
                 </div>
               </div>

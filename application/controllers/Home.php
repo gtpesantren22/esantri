@@ -37,6 +37,7 @@ class Home extends CI_Controller
 		);
 		$this->session->unset_userdata('namaSesi', $sess_array);
 		// $data['message_display'] = 'Successfully Logout';
+		$this->session->set_flashdata('berhasil', 'Logout Berhasil');
 		redirect('login');
 	}
 }

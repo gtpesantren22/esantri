@@ -52,7 +52,7 @@ class Login extends CI_Controller
 
         if ($cek->num_rows() == 1) {
             $hasil = $cek->row();
-            if ($password == $hasil->pass) {
+            if ($password === $hasil->pass) {
                 $this->session->set_userdata('id_santri', $hasil->id_santri);
                 $this->session->set_userdata('nis_santri', $hasil->nis);
                 $this->session->set_userdata('namaSesi', 'qwertyuiop0987654321');
@@ -62,7 +62,7 @@ class Login extends CI_Controller
             } else {
                 $this->session->set_flashdata(
                     "pesan",
-                    "Password salah"
+                    "Password salah/tidak ditemukan"
                 );
                 // $this->session->set_flashdata('error', 'Login Salah');
                 redirect('login');
@@ -70,7 +70,7 @@ class Login extends CI_Controller
         } else {
             $this->session->set_flashdata(
                 "pesan",
-                "Username salah"
+                "Username salah/tidak ditemukan"
             );
             redirect('login');
         }
