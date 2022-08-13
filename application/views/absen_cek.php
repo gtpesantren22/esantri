@@ -34,7 +34,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-primary text-gradient text-sm font-weight-bold">
-                <?= $abse->I; ?> jam pelajaran
+                <?= $abse->izin; ?> jam pelajaran
               </div>
             </li>
             <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
@@ -45,7 +45,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-warning text-gradient text-sm font-weight-bold">
-                <?= $abse->S; ?> jam pelajaran
+                <?= $abse->sakit; ?> jam pelajaran
               </div>
             </li>
             <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
@@ -56,7 +56,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
-                <?= $abse->A; ?> jam pelajaran
+                <?= $abse->sakit; ?> jam pelajaran
               </div>
             </li>
 
@@ -120,7 +120,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-primary text-gradient text-sm font-weight-bold">
-                <?= $abse_cek->I; ?> jam pelajaran
+                <?= $abse_cek->izin; ?> jam pelajaran
               </div>
             </li>
             <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
@@ -131,7 +131,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-warning text-gradient text-sm font-weight-bold">
-                <?= $abse_cek->S; ?> jam pelajaran
+                <?= $abse_cek->sakit; ?> jam pelajaran
               </div>
             </li>
             <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
@@ -142,7 +142,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
-                <?= $abse_cek->A; ?> jam pelajaran
+                <?= $abse_cek->sakit; ?> jam pelajaran
               </div>
             </li>
 

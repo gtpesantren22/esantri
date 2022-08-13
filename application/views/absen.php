@@ -29,7 +29,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-primary text-gradient text-sm font-weight-bold">
-                <?= $abse->I; ?> kali
+                <?= $abse->izin; ?> kali
               </div>
             </li>
             <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
@@ -40,7 +40,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-warning text-gradient text-sm font-weight-bold">
-                <?= $abse->S; ?> kali
+                <?= $abse->sakit; ?> kali
               </div>
             </li>
             <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
@@ -51,7 +51,7 @@
                 </div>
               </div>
               <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
-                <?= $abse->A; ?> kali
+                <?= $abse->alpha; ?> kali
               </div>
             </li>
 
@@ -96,13 +96,13 @@
                     <span class="badge badge-sm bg-gradient-primary"><?= 'Minggu ke-' . $abs_allOk->minggu; ?></span>
                   </td>
                   <td>
-                    <h6 class="mb-0 text-sm"><?= $abs_allOk->I; ?> kali</h6>
+                    <h6 class="mb-0 text-sm"><?= $abs_allOk->izin; ?> kali</h6>
                   </td>
                   <td>
-                    <h6 class="mb-0 text-sm"><?= $abs_allOk->S; ?> kali</h6>
+                    <h6 class="mb-0 text-sm"><?= $abs_allOk->sakit; ?> kali</h6>
                   </td>
                   <td>
-                    <h6 class="mb-0 text-sm"><?= $abs_allOk->A; ?> kali</h6>
+                    <h6 class="mb-0 text-sm"><?= $abs_allOk->alpha; ?> kali</h6>
                   </td>
                   <td>
                     <h6 class="mb-0 text-sm"><?= $abs_allOk->ket; ?></h6>
