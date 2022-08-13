@@ -1,14 +1,14 @@
 <div class="row ">
   <div class="col-md-12 mt-2">
-    <a href="<?= base_url('absen'); ?>" class="btn bg-gradient-success">Absen Formal</a>
-    <a href="<?= base_url('absen/madin'); ?>" class="btn">Absen Madin</a>
+    <a href="<?= base_url('absen'); ?>" class="btn">Absen Formal</a>
+    <a href="<?= base_url('absen/madin'); ?>" class="btn bg-gradient-success">Absen Madin</a>
   </div>
   <div class="col-md-12 mt-4">
     <div class="card h-100 mb-4">
       <div class="card-header pb-0 px-3">
         <div class="row">
           <div class="col-md-12">
-            <h6 class="mb-0">Absensi Kehadiran Santri (Formal) </h6>
+            <h6 class="mb-0">Absensi Kehadiran Santri (Madin) </h6>
           </div>
         </div>
       </div>

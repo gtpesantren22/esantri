@@ -27,6 +27,19 @@ class Absen extends CI_Controller
 		$this->load->view('foot');
 	}
 
+	public function madin()
+	{
+		$data['title'] = 'absen';
+		$nis_santri = $this->session->userdata('nis_santri');
+		$data['dtsn'] = $this->M_Absen->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
+		$data['abs'] = $this->M_Absen->dt_absMd($nis_santri)->result();
+		$data['abs_all'] = $this->M_Absen->dt_abs_allMd($nis_santri)->result();
+
+		$this->load->view('head', $data);
+		$this->load->view('madin', $data);
+		$this->load->view('foot');
+	}
+
 	public function cek()
 	{
 		$data['title'] = 'absen';
