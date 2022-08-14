@@ -93,7 +93,7 @@
                 <tr>
                   <td>
                     <span class="badge badge-sm bg-gradient-success"><?= $bn[$abs_allOk->bulan]; ?></span>
-                    <span class="badge badge-sm bg-gradient-primary"><?= 'Minggu ke-' . $abs_allOk->minggu; ?></span>
+                    <span class="badge badge-sm bg-gradient-primary"><?= 'Minggu ke-' . $abs_allOk->minggu; ?> (<?= $abse->rentang; ?>)</span>
                   </td>
                   <td>
                     <h6 class="mb-0 text-sm"><?= $abs_allOk->izin; ?> kali</h6>
