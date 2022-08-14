@@ -18,7 +18,7 @@
         foreach ($abs as $abse) : ?>
           <h3 class="text-uppercase text-body text-xs font-weight-bolder mb-3">
             <i class="far fa-calendar-alt me-2"></i>
-            Absen Terakhir : Bulan <?= $bn[$abse->bulan]; ?>, Minggu ke-<?= $abse->minggu; ?>
+            Absen Terakhir : Bulan <?= $bn[$abse->bulan]; ?>, Minggu ke-<?= $abse->minggu; ?> (<?= $abse->rentang; ?>)
           </h3>
           <ul class="list-group">
             <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
