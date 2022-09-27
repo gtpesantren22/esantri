@@ -197,7 +197,7 @@
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
-                            <a href="<?= base_url('home/logout'); ?>" onclick="return confirm('Yakin akan keluar ?')" class="nav-link text-body p-0">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-link text-body p-0">
                                 <i class="fa fa-power-off fixed-plugin-button-nav cursor-pointer"></i>
                             </a>
                         </li>
@@ -208,3 +208,19 @@
         </nav>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Yakin Akan Keluar ?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                            <a href="<?= base_url('home/logout') ?>" class="btn btn-primary">Ya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
