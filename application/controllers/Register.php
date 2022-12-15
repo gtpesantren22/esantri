@@ -50,7 +50,7 @@ class Register extends CI_Controller
             $this->session->set_flashdata('pesan', 'Maaf, NIK Tidak ditemukan');
             redirect('register');
         } else {
-            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $passNew = substr(str_shuffle($permitted_chars), 0, 10);
             $data = array(
                 "pass" => $passNew
@@ -84,7 +84,7 @@ Terimakasih';
                         CURLOPT_FOLLOWLOCATION => true,
                         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                         CURLOPT_CUSTOMREQUEST => 'POST',
-                        CURLOPT_POSTFIELDS => 'apiKey=fb209be1f23625e43cbf285e57c0c0f2&phone=' . $infoData->hp . '&message=' . $psn,
+                        CURLOPT_POSTFIELDS => 'apiKey=f4064efa9d05f66f9be6151ec91ad846&phone=' . $infoData->hp . '&message=' . $psn,
                     )
                 );
                 $response = curl_exec($curl);
