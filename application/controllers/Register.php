@@ -51,7 +51,7 @@ class Register extends CI_Controller
             $this->session->set_flashdata('pesan', 'Maaf, NIK Tidak ditemukan');
             redirect('register');
         } else {
-<<<<<<< HEAD
+
             if ($cek2 != '') {
                 $this->session->set_flashdata('pesan', 'Maaf, Password sudah ada. </> Silahkan hubungi pengurus terkait');
                 redirect('register');
@@ -61,13 +61,13 @@ class Register extends CI_Controller
                 $data = array(
                     "pass" => $passNew
                 );
-=======
-            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            $passNew = substr(str_shuffle($permitted_chars), 0, 10);
-            $data = array(
-                "pass" => $passNew
-            );
->>>>>>> fae7fa666dc906e628a41ae65055443b28bb0573
+
+                $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $passNew = substr(str_shuffle($permitted_chars), 0, 10);
+                $data = array(
+                    "pass" => $passNew
+                );
+
 
                 $this->M_Register->update_data('tb_santri', $data, $where);
                 $infoData = $this->M_Register->cek_nik('tb_santri', $where)->row();
@@ -86,7 +86,6 @@ Password : *' . $infoData->pass . '*
 *_Akun sudah bisa digunakan di Aplikasi atau di https://esantri.ppdwk.com/_*
 Terimakasih';
 
-<<<<<<< HEAD
                     $curl = curl_init();
                     curl_setopt_array(
                         $curl,
@@ -104,25 +103,6 @@ Terimakasih';
                     );
                     $response = curl_exec($curl);
                     curl_close($curl);
-=======
-                $curl = curl_init();
-                curl_setopt_array(
-                    $curl,
-                    array(
-                        CURLOPT_URL => 'http://8.215.26.187:3000/api/sendMessage',
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_ENCODING => '',
-                        CURLOPT_MAXREDIRS => 10,
-                        CURLOPT_TIMEOUT => 0,
-                        CURLOPT_FOLLOWLOCATION => true,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => 'POST',
-                        CURLOPT_POSTFIELDS => 'apiKey=f4064efa9d05f66f9be6151ec91ad846&phone=' . $infoData->hp . '&message=' . $psn,
-                    )
-                );
-                $response = curl_exec($curl);
-                curl_close($curl);
->>>>>>> fae7fa666dc906e628a41ae65055443b28bb0573
 
                     $this->session->set_flashdata('berhasil', 'Pendaftaran akun berhasil. Informasi </br> akun sudah dikirimkan ke No WA terdaftar');
                     redirect('register');
