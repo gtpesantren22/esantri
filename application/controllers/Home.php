@@ -19,7 +19,11 @@ class Home extends CI_Controller
 		$data['title'] = 'home';
 		$nis_santri = $this->session->userdata('nis_santri');
 		$data['dtsn'] = $this->M_Home->dt_santri('tb_santri', ['nis' => $nis_santri])->row();
-		$data['tangg'] = $this->M_Home->dt_tangg($nis_santri)->row();
+		if ($this->M_Home->dt_tangg($nis_santri)->num_rows() < 1) {
+			$data['tangg'] = 'Tidak Ada Tanggungan Biaya Pendidikan';
+		} else {
+			$data['tangg'] = $this->M_Home->dt_tangg($nis_santri)->row();
+		}
 
 		$this->load->view('head', $data);
 		$this->load->view('home', $data);

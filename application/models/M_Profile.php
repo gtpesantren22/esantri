@@ -1,6 +1,6 @@
 <?php
 
-class M_Home extends CI_Model
+class M_Profile extends CI_Model
 {
     public function __construct()
     {
@@ -19,5 +19,11 @@ class M_Home extends CI_Model
         $this->db2->where('tahun', '2022/2023');
         $this->db2->from('tangg');
         return $this->db2->get();
+    }
+
+    public function edit($table, $data, $nis)
+    {
+        $this->db->where('nis', $nis);
+        $this->db->update($table, $data);
     }
 }

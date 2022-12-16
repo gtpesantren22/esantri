@@ -217,7 +217,7 @@
                     <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Profile</h6>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $title == 'profile' ? 'active' : ''; ?> " href="<?= base_url('raport'); ?>">
+                    <a class="nav-link <?= $title == 'profile' ? 'active' : ''; ?> " href="<?= base_url('profile'); ?>">
                         <div
                             class="icon icon-user icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -283,12 +283,12 @@
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
-<<<<<<< HEAD
-                            <a href="<?= base_url('home/logout'); ?>" onclick="return confirm('Yakin akan keluar ?')"
+                            <!-- <<<<<<< HEAD <a href="<?= base_url('home/logout'); ?>"
+                                onclick="return confirm('Yakin akan keluar ?')" class="nav-link text-body p-0">
+                                ======= -->
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 class="nav-link text-body p-0">
-=======
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-link text-body p-0">
->>>>>>> 2fd72bfc003868e461d089a488d8b258583af984
+                                <!-- >>>>>>> 2fd72bfc003868e461d089a488d8b258583af984 -->
                                 <i class="fa fa-power-off fixed-plugin-button-nav cursor-pointer"></i>
                             </a>
                         </li>
@@ -300,7 +300,8 @@
         <!-- End Navbar -->
         <div class="container-fluid py-4">
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
