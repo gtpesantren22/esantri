@@ -222,6 +222,7 @@
                             class="icon icon-user icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
                                 <title>settings</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF"
@@ -231,7 +232,7 @@
                                                 <polygon class="color-background" opacity="0.596981957"
                                                     points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667">
                                                 </polygon>
-                                                <path class="color-background"
+                                                <path class="color-backgrou  nd"
                                                     d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"
                                                     opacity="0.596981957"></path>
                                                 <path class="color-background"
@@ -283,12 +284,9 @@
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
-                            <!-- <<<<<<< HEAD <a href="<?= base_url('home/logout'); ?>"
-                                onclick="return confirm('Yakin akan keluar ?')" class="nav-link text-body p-0">
-                                ======= -->
+
                             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 class="nav-link text-body p-0">
-                                <!-- >>>>>>> 2fd72bfc003868e461d089a488d8b258583af984 -->
                                 <i class="fa fa-power-off fixed-plugin-button-nav cursor-pointer"></i>
                             </a>
                         </li>
