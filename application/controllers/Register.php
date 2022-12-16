@@ -53,7 +53,7 @@ class Register extends CI_Controller
         } else {
 
             if ($cek2 != '') {
-                $this->session->set_flashdata('pesan', 'Maaf, Password sudah ada. </> Silahkan hubungi pengurus terkait');
+                $this->session->set_flashdata('pesan', 'Maaf, Password sudah ada. <br/> Silahkan hubungi pengurus terkait');
                 redirect('register');
             } else {
                 $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
