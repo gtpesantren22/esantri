@@ -20,4 +20,10 @@ class M_Home extends CI_Model
         $this->db2->from('tangg');
         return $this->db2->get();
     }
+
+    public function update($table, $where, $dt_where, $data)
+    {
+        $this->db->where($where, $dt_where);
+        $this->db->update($table, $data);
+    }
 }

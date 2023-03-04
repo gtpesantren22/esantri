@@ -44,4 +44,11 @@ class Home extends CI_Controller
 		$this->session->set_flashdata('berhasil', 'Logout Berhasil');
 		redirect('login');
 	}
+
+	public function updateLog()
+	{
+		$nis_santri = $this->session->userdata('nis_santri');
+		$time = time() + 10;
+		$this->M_Home->update('log_santri', 'nis', $nis_santri, ['last_login' => $time]);
+	}
 }

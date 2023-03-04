@@ -26,7 +26,7 @@
 <script src="<?= base_url(); ?>assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
 
 <script src="<?= base_url(); ?>assets/sw/sweetalert2.all.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     <?php if ($this->session->flashdata('success')) { ?>
         var isi = <?= json_encode($this->session->flashdata('success')) ?>
@@ -45,6 +45,18 @@
             text: isi
         })
     <?php } ?>
+
+    function updateUserStatus() {
+        jQuery.ajax({
+            url: '<?= base_url('home/updateLog') ?>',
+            success: function() {
+
+            }
+        });
+    }
+    setInterval(function() {
+        updateUserStatus();
+    }, 1000);
 </script>
 </body>
 
