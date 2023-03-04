@@ -12,8 +12,8 @@ class M_Login extends CI_Model
     {
         $time = time() + 10;
 
-        $this->db->update('log_santri', ['last_login' => $time]);
         $this->db->where('nis', $nis);
+        $this->db->update('log_santri', ['last_login' => $time]);
     }
 
     public function tambah($table, $data)
