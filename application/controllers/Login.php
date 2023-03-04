@@ -58,6 +58,15 @@ class Login extends CI_Controller
                 $this->session->set_userdata('namaSesi', 'qwertyuiop0987654321');
 
                 $this->session->set_flashdata('success', 'Login Berhasil');
+                $this->M_Login->updateLog($hasil->nis);
+
+                $data = [
+                    'no_daftar' => $hasil->nis,
+                    'ip' => @$_SERVER['REMOTE_ADDR'],
+                    'agent' => @$_SERVER['HTTP_USER_AGENT'],
+                    'waktu' => date('Y-m-d H:i:s'),
+                ];
+                $this->M_Login->tambah('user_log', $data);
                 redirect('home');
             } else {
                 $this->session->set_flashdata(
