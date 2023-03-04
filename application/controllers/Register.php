@@ -83,7 +83,7 @@ Username : *' . $infoData->nis . '*
 Password : *' . $infoData->pass . '*
 
 *_Akun ini bersifat rahasia. dimohon untuk menyimpan akun ini dengan baik_*
-*_Akun sudah bisa digunakan di Aplikasi atau di https://esantri.ppdwk.com/_*
+*_Akun sudah bisa digunakan di Aplikasi. Link download https://bit.ly/eSantri-DWK_*
 Terimakasih';
 
                     $curl = curl_init();
