@@ -56,14 +56,14 @@ class Register extends CI_Controller
                 $this->session->set_flashdata('pesan', 'Maaf, Password sudah ada. <br/> Silahkan hubungi pengurus terkait');
                 redirect('register');
             } else {
-                $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                $passNew = substr(str_shuffle($permitted_chars), 0, 10);
+                $permitted_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $passNew = substr(str_shuffle($permitted_chars), 0, 5);
                 $data = array(
                     "pass" => $passNew
                 );
 
-                $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                $passNew = substr(str_shuffle($permitted_chars), 0, 10);
+                $permitted_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $passNew = substr(str_shuffle($permitted_chars), 0, 5);
                 $data = array(
                     "pass" => $passNew
                 );
@@ -90,7 +90,7 @@ Terimakasih';
                     curl_setopt_array(
                         $curl,
                         array(
-                            CURLOPT_URL => 'http://8.215.26.187:3000/api/sendMessage',
+                            CURLOPT_URL => 'http://191.101.3.115:3000/api/sendMessage',
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_ENCODING => '',
                             CURLOPT_MAXREDIRS => 10,
