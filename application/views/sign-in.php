@@ -33,9 +33,46 @@
   <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="assets/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
+
+  <style>
+    #loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loading-spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #ffffff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 
 <body class="">
+  <div id="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
   <main class="main-content  mt-0">
     <section>
       <div class="page-header min-vh-75">
@@ -125,6 +162,32 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var loadingOverlay = document.getElementById("loading-overlay");
+
+      // Fungsi untuk menampilkan loading
+      function showLoading() {
+        loadingOverlay.style.display = "flex";
+      }
+
+      // Fungsi untuk menyembunyikan loading
+      function hideLoading() {
+        loadingOverlay.style.display = "none";
+      }
+
+      // Menambahkan event listener untuk mengatur tampilan loading saat halaman sedang dimuat
+      window.addEventListener("beforeunload", function() {
+        showLoading();
+      });
+
+      // Menambahkan event listener untuk menyembunyikan loading setelah halaman selesai dimuat
+      window.addEventListener("load", function() {
+        hideLoading();
+      });
+    });
+  </script>
 </body>
 
 </html>

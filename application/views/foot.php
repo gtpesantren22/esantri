@@ -58,6 +58,32 @@
         updateUserStatus();
     }, 1000);
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var loadingOverlay = document.getElementById("loading-overlay");
+
+        // Fungsi untuk menampilkan loading
+        function showLoading() {
+            loadingOverlay.style.display = "flex";
+        }
+
+        // Fungsi untuk menyembunyikan loading
+        function hideLoading() {
+            loadingOverlay.style.display = "none";
+        }
+
+        // Menambahkan event listener untuk mengatur tampilan loading saat halaman sedang dimuat
+        window.addEventListener("beforeunload", function() {
+            showLoading();
+        });
+
+        // Menambahkan event listener untuk menyembunyikan loading setelah halaman selesai dimuat
+        window.addEventListener("load", function() {
+            hideLoading();
+        });
+    });
+</script>
 </body>
 
 </html>
