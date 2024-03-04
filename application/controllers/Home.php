@@ -25,6 +25,9 @@ class Home extends CI_Controller
 			$data['tangg'] = $this->M_Home->dt_tangg($nis_santri)->row();
 		}
 
+		$data['syarat'] = $this->M_Home->getBy('rekap', 'nis', $nis_santri, 'nominal !=', 0)->result();
+		$data['total'] = $this->db->query("SELECT SUM(nominal) AS jml FROM rekap WHERE nis = $nis_santri ")->row();
+
 		$this->load->view('head', $data);
 		$this->load->view('home', $data);
 		$this->load->view('foot');

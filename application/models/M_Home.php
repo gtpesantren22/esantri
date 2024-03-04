@@ -26,4 +26,16 @@ class M_Home extends CI_Model
         $this->db->where($where, $dt_where);
         $this->db->update($table, $data);
     }
+
+    public function getBy($table, $where, $dt_where)
+    {
+        $this->db->where($where, $dt_where);
+        return $this->db->get($table);
+    }
+    public function getBy2($table, $where, $dt_where, $where1, $dt_where1)
+    {
+        $this->db->where($where, $dt_where);
+        $this->db->where($where1, $dt_where1);
+        return $this->db->get($table);
+    }
 }
